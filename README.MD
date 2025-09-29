@@ -1,6 +1,6 @@
-# DocuVaultApp
+# DocuVault
 
-DocuVaultApp is a modern, secure, and user-friendly web application for managing documents. Users can upload, view, and manage their files efficiently.
+DocuVault is a modern, secure, and user-friendly web application for managing documents. Users can upload, view, and manage their files efficiently.
 ---
 
 ## Table of Contents
