@@ -1,0 +1,102 @@
+/* --- Dark Mode Base --- */
+body {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0;           /* Light grey text for readability */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    color: #64b5f6; /* Soothing blue accent for links */
+}
+
+a:hover {
+    color: #90caf9;
+    text-decoration: none;
+}
+
+/* --- Navbar --- */
+.navbar {
+    background-color: #1f1f1f; /* Dark navbar */
+}
+
+.navbar .nav-link {
+    color: #e0e0e0 !important;
+}
+
+.navbar .nav-link:hover {
+    color: #64b5f6 !important;
+}
+
+/* --- Cards --- */
+.card.bg-dark-accent {
+    background-color: #1e1e2f; /* Slightly lighter than body for depth */
+}
+
+.card-title {
+    color: #ffffff;
+}
+
+.card-text {
+    color: #b0b0b0;
+}
+
+/* --- Buttons --- */
+.btn-accent {
+    background-color: #64b5f6;
+    color: #fff;
+    border: none;
+}
+
+.btn-accent:hover {
+    background-color: #90caf9;
+    color: #000;
+}
+
+.btn-outline-accent {
+    border: 1px solid #64b5f6;
+    color: #64b5f6;
+    background-color: transparent;
+}
+
+.btn-outline-accent:hover {
+    background-color: #64b5f6;
+    color: #000;
+}
+
+/* --- Forms / Inputs --- */
+.form-control-dark {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    border: 1px solid #333;
+}
+
+.form-control-dark:focus {
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    border-color: #64b5f6;
+    box-shadow: 0 0 5px #64b5f6;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #1f1f1f;
+    color: #999;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background-color: #1a1a1a;
+    padding: 3rem 1rem;
+    border-radius: 10px;
+}
+
+.hero-section h1, .hero-section p {
+    color: #e0e0e0;
+}
+
+.hero-section .btn-accent {
+    font-size: 1.2rem;
+    padding: 0.75rem 1.5rem;
+}

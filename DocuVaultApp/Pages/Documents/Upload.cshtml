@@ -1,0 +1,42 @@
+@page
+@model DocuVaultApp.Pages.Documents.UploadModel
+@{
+    ViewData["Title"] = "Upload Document";
+}
+
+<div class="container my-5">
+    <h1 class="text-light mb-4">Upload a New Document</h1>
+
+    <div class="card bg-dark-accent text-light shadow-sm p-4">
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label asp-for="Document.Title" class="form-label">Title</label>
+                <input asp-for="Document.Title" class="form-control form-control-dark" placeholder="Document Title" />
+                <span asp-validation-for="Document.Title" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Document.Category" class="form-label">Category</label>
+                <input asp-for="Document.Category" class="form-control form-control-dark" placeholder="Document Category" />
+                <span asp-validation-for="Document.Category" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Document.Tags" class="form-label">Tags</label>
+                <input asp-for="Document.Tags" class="form-control form-control-dark" placeholder="Tags (comma separated)" />
+                <span asp-validation-for="Document.Tags" class="text-danger"></span>
+            </div>
+
+            <div class="mb-4">
+                <label asp-for="UploadedFile" class="form-label">Choose File</label>
+                <input asp-for="UploadedFile" class="form-control form-control-dark" type="file" />
+                <span asp-validation-for="UploadedFile" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-accent">Upload</button>
+                <a asp-page="/Documents/Index" class="btn btn-outline-accent">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

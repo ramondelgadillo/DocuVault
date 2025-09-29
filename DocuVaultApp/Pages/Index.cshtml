@@ -1,0 +1,36 @@
+﻿@page
+@model DocuVaultApp.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="hero-section text-center py-5">
+    <h1 class="display-4 text-light">Welcome to DocuVault</h1>
+    <p class="lead text-muted">Securely upload, manage, and view your documents with ease.</p>
+    <a class="btn btn-accent btn-lg mt-3" asp-page="/Documents/Upload">Upload Document</a>
+    <a class="btn btn-outline-accent btn-lg mt-3 ms-2" asp-page="/Documents/Index">View Documents</a>
+</div>
+
+<div class="container my-5">
+    <h2 class="mb-4 text-light">Quick Links</h2>
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+            <div class="card bg-dark-accent text-light shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Upload Document</h5>
+                    <p class="card-text text-muted">Add new documents to your secure vault.</p>
+                    <a class="btn btn-accent" asp-page="/Documents/Upload">Go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+            <div class="card bg-dark-accent text-light shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">View Documents</h5>
+                    <p class="card-text text-muted">Browse and manage your uploaded files.</p>
+                    <a class="btn btn-accent" asp-page="/Documents/Index">Go</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
