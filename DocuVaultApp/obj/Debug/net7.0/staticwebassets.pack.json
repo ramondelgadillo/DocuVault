@@ -241,12 +241,52 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\ramon\\Desktop\\DocuVault\\DocuVaultApp\\wwwroot\\uploads\\HW1.pdf",
+      "PackagePath": "staticwebassets\\uploads\\HW1.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ramon\\Desktop\\DocuVault\\DocuVaultApp\\wwwroot\\uploads\\Martial Arts Classes.docx",
+      "PackagePath": "staticwebassets\\uploads\\Martial Arts Classes.docx"
+    },
+    {
+      "Id": "C:\\Users\\ramon\\Desktop\\DocuVault\\DocuVaultApp\\wwwroot\\uploads\\RE Continental GT650 manual.pdf",
+      "PackagePath": "staticwebassets\\uploads\\RE Continental GT650 manual.pdf"
+    },
+    {
+      "Id": "C:\\Users\\ramon\\Desktop\\DocuVault\\DocuVaultApp\\wwwroot\\uploads\\artworks-000148618041-f3divq-t500x500.jpg",
+      "PackagePath": "staticwebassets\\uploads\\artworks-000148618041-f3divq-t500x500.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ramon\\Desktop\\DocuVault\\DocuVaultApp\\wwwroot\\uploads\\artworks-GJqqlaiiGeALf.jpg",
+      "PackagePath": "staticwebassets\\uploads\\artworks-GJqqlaiiGeALf.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ramon\\Desktop\\DocuVault\\DocuVaultApp\\wwwroot\\uploads\\firefox(1).ico",
+      "PackagePath": "staticwebassets\\uploads\\firefox(1).ico"
+    },
+    {
+      "Id": "C:\\Users\\ramon\\Desktop\\DocuVault\\DocuVaultApp\\wwwroot\\uploads\\hopelessromantic.jpg",
+      "PackagePath": "staticwebassets\\uploads\\hopelessromantic.jpg"
+    },
+    {
       "Id": "C:\\Users\\ramon\\Desktop\\DocuVault\\DocuVaultApp\\wwwroot\\uploads\\machine-gun-kelly-mainstream-sellout.jpg",
       "PackagePath": "staticwebassets\\uploads\\machine-gun-kelly-mainstream-sellout.jpg"
     },
     {
       "Id": "C:\\Users\\ramon\\Desktop\\DocuVault\\DocuVaultApp\\wwwroot\\uploads\\machine_gun_kelly_feat_bring_me_the_horizon_maybe-713457251-large.jpg",
       "PackagePath": "staticwebassets\\uploads\\machine_gun_kelly_feat_bring_me_the_horizon_maybe-713457251-large.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ramon\\Desktop\\DocuVault\\DocuVaultApp\\wwwroot\\uploads\\nirvana.png",
+      "PackagePath": "staticwebassets\\uploads\\nirvana.png"
+    },
+    {
+      "Id": "C:\\Users\\ramon\\Desktop\\DocuVault\\DocuVaultApp\\wwwroot\\uploads\\regret.jpg",
+      "PackagePath": "staticwebassets\\uploads\\regret.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ramon\\Desktop\\DocuVault\\DocuVaultApp\\wwwroot\\uploads\\word.ico",
+      "PackagePath": "staticwebassets\\uploads\\word.ico"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.DocuVaultApp.Microsoft.AspNetCore.StaticWebAssets.props",

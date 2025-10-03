@@ -1,8 +1,15 @@
 @page
 @model DocuVaultApp.Pages.Documents.IndexModel
+@using System.IO
+
 @{
     ViewData["Title"] = "Documents";
 }
+
+<!-- Include Font Awesome CDN for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+      integrity="sha512-SzlrxWriC3r+G1u2f2Zg+Yd7UpnTdIuC5IYb3O0E6F9rZz9POaZ3Rt+zVX8vW1fVVEmz0Y8Z1J1yujqg6xF5fA==" 
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <div class="container my-5">
     <h1 class="text-light mb-4">Your Documents</h1>
@@ -13,28 +20,70 @@
     </div>
 
     @if (Model.Documents != null && Model.Documents.Any())
-    {
-        <div class="row g-4">
-            @foreach (var doc in Model.Documents)
+{
+    <div class="row g-4">
+        @foreach (var doc in Model.Documents)
+        {
+            var extension = System.IO.Path.GetExtension(doc.FilePath).ToLower();
+            string iconClass;
+
+            switch (extension)
             {
-                <div class="col-md-6 col-lg-4">
-                    <div class="card bg-dark-accent text-light shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">@doc.Title</h5>
-                            <p class="card-text text-muted mb-2">@doc.Category</p>
-                            <p class="card-text text-light mb-3">@doc.Tags</p>
-                            <div class="mt-auto">
-                                <a class="btn btn-outline-accent w-100 mb-2" href="@doc.FilePath" target="_blank">View</a>
-                                <a class="btn btn-accent w-100" asp-page="/Documents/Upload">Upload New</a>
-                            </div>
+                case ".pdf":
+                    iconClass = "fa-file-pdf text-danger";
+                    break;
+                case ".doc":
+                case ".docx":
+                    iconClass = "fa-file-word text-primary";
+                    break;
+                case ".xls":
+                case ".xlsx":
+                    iconClass = "fa-file-excel text-success";
+                    break;
+                case ".ppt":
+                case ".pptx":
+                    iconClass = "fa-file-powerpoint text-warning";
+                    break;
+                case ".jpg":
+                case ".jpeg":
+                case ".png":
+                case ".gif":
+                    iconClass = "fa-file-image text-info";
+                    break;
+                case ".txt":
+                    iconClass = "fa-file-lines text-secondary";
+                    break;
+                case ".zip":
+                case ".rar":
+                    iconClass = "fa-file-zipper text-muted";
+                    break;
+                default:
+                    iconClass = "fa-file text-light";
+                    break;
+            }
+
+            <div class="col-md-6 col-lg-4 document-card" data-title="@doc.Title.ToLower()" data-category="@doc.Category?.ToLower()">
+                <div class="card bg-dark-accent text-light shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">
+                            <i class="fa-solid @iconClass me-2"></i> @doc.Title
+                        </h5>
+                        <p class="card-text text-muted mb-2">@doc.Category</p>
+                        <p class="card-text text-light mb-3">@doc.Tags</p>
+                        <div class="mt-auto d-flex gap-2 flex-column">
+                            <a class="btn btn-outline-accent w-100" href="@doc.FilePath" target="_blank">View</a>
+                            <a class="btn btn-accent w-100" asp-page="/Documents/Upload">Upload New</a>
                         </div>
                     </div>
                 </div>
-            }
-        </div>
+            </div>
+        }
+    </div>
     }
     else
     {
         <p class="text-muted">No documents uploaded yet.</p>
     }
+
 </div>
+

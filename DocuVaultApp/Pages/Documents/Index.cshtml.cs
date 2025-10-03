@@ -1,11 +1,9 @@
-// File: Pages/Documents/Index.cshtml.cs
 using DocuVaultApp.Data;
 using DocuVaultApp.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace DocuVaultApp.Pages.Documents
 {
@@ -18,15 +16,26 @@ namespace DocuVaultApp.Pages.Documents
             _context = context;
         }
 
-        // Renamed from RecentDocuments to Documents to match Razor page
-        public IList<Document> Documents { get; set; } = new List<Document>();
+        public List<Document> Documents { get; set; } = new List<Document>();
 
-        public async Task OnGetAsync()
+        // Pagination properties
+        public int PageNumber { get; set; } = 1;
+        public int PageSize { get; set; } = 12; // Number of documents per page
+        public int TotalPages { get; set; }
+
+        public void OnGet(int? pageNumber)
         {
-            Documents = await _context.Documents
+            PageNumber = pageNumber ?? 1;
+
+            int totalDocuments = _context.Documents.Count();
+            TotalPages = (int)Math.Ceiling(totalDocuments / (double)PageSize);
+
+            Documents = _context.Documents
                 .OrderByDescending(d => d.UploadDate)
-                .Take(6)
-                .ToListAsync();
+                .Skip((PageNumber - 1) * PageSize)
+                .Take(PageSize)
+                .ToList();
         }
     }
 }
+

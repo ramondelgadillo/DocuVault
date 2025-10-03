@@ -26,6 +26,10 @@ namespace DocuVaultApp.Pages.Documents
         [BindProperty]
         public IFormFile? UploadedFile { get; set; } // Nullable, form might not submit file
 
+        // ---------------- NEW ----------------
+        [TempData] // CHANGED: added TempData to store success message
+        public string? SuccessMessage { get; set; }
+
         public void OnGet()
         {
         }
@@ -54,6 +58,9 @@ namespace DocuVaultApp.Pages.Documents
 
             _context.Documents.Add(Document);
             await _context.SaveChangesAsync();
+
+            // ---------------- NEW ----------------
+            SuccessMessage = "✅ Document uploaded successfully!"; // CHANGED: set message for toast
 
             return RedirectToPage("/Documents/Index"); // Make sure it redirects to the documents list
         }

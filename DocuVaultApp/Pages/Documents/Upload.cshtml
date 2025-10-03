@@ -17,7 +17,15 @@
 
             <div class="mb-3">
                 <label asp-for="Document.Category" class="form-label">Category</label>
-                <input asp-for="Document.Category" class="form-control form-control-dark" placeholder="Document Category" />
+                <select asp-for="Document.Category" class="form-select form-control-dark">
+                    <option value="">-- Select a Category --</option>
+                    <option>Work</option>
+                    <option>Personal</option>
+                    <option>Finance</option>
+                    <option>Education</option>
+                    <option>Legal</option>
+                    <option>Other</option>
+                </select>
                 <span asp-validation-for="Document.Category" class="text-danger"></span>
             </div>
 
